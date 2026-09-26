@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">QUIZ MAKER</div>
+
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('quizzes')">Quizzes</a>
+            <a href="#" onclick="showPage('create')">Create Quiz</a>
+            <a href="#" onclick="showPage('login')" id="loginLink">Login</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-text">
+                    <p class="small-heading">WELCOME TO</p>
+
+                    <h1>ONLINE<br>QUIZ MAKER</h1>
+
+                    <p>
+                        Create your own quizzes, challenge your friends,
+                        and test your knowledge with our simple quiz platform.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button onclick="showPage('create')">
+                            Create a Quiz
+                        </button>
+
+                        <button class="outline-btn"
+                                onclick="showPage('quizzes')">
+                            Take a Quiz
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-circle">
+                    <div class="circle-inner">
+                        ?
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <span>✎</span>
+                    <h3>Create Quizzes</h3>
+                    <p>Make your own questions and answers.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span>✓</span>
+                    <h3>Test Yourself</h3>
+                    <p>Take quizzes and improve your knowledge.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span>★</span>
+                    <h3>View Results</h3>
+                    <p>Get your score immediately after finishing.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Create Quiz Page -->
+        <section id="create" class="page">
+            <div class="page-heading">
+                <p class="small-heading">BUILD SOMETHING NEW</p>
+                <h2>Create a Quiz</h2>
+                <p>Add questions with four multiple-choice options.</p>
+            </div>
+
+            <form id="quizForm">
+
+                <div class="form-box">
+                    <label for="quizTitle">Quiz Title</label>
+                    <input
+                        type="text"
+                        id="quizTitle"
+                        placeholder="Enter quiz title"
+                        required
+                    >
+
+                    <label for="quizDescription">Description</label>
+                    <textarea
+                        id="quizDescription"
+                        placeholder="What is this quiz about?"
+                        required
+                    ></textarea>
+                </div>
+
+                <div id="questionContainer"></div>
+
+                <button type="button"
+                        class="add-question"
+                        onclick="addQuestion()">
+                    + Add Question
+                </button>
+
+                <button type="submit" class="save-btn">
+                    Save Quiz
+                </button>
+            </form>
+        </section>
+
+
+        <!-- Quiz Listing Page -->
+        <section id="quizzes" class="page">
+            <div class="page-heading">
+                <p class="small-heading">TEST YOUR KNOWLEDGE</p>
+                <h2>Available Quizzes</h2>
+                <p>Choose a quiz and see how much you know.</p>
+            </div>
+
+            <div id="quizList" class="quiz-list"></div>
+        </section>
+
+
+        <!-- Quiz Taking Page -->
+        <section id="takeQuiz" class="page">
+
+            <div class="quiz-top">
+                <span id="questionNumber">Question 1</span>
+                <span id="quizProgress">1 / 5</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+
+            <div class="question-box">
+                <h2 id="questionText">Question goes here</h2>
+
+                <div id="answerOptions"></div>
+
+                <p id="answerFeedback"></p>
+
+                <button id="nextBtn"
+                        class="next-btn"
+                        onclick="nextQuestion()">
+                    Next Question →
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- Results Page -->
+        <section id="results" class="page">
+
+            <div class="result-box">
+                <div class="result-icon">✓</div>
+
+                <p class="small-heading">QUIZ COMPLETED</p>
+
+                <h2>Your Results</h2>
+
+                <div class="score" id="finalScore">0 / 0</div>
+
+                <p id="resultMessage"></p>
+
+                <div id="correctAnswers" class="correct-answers"></div>
+
+                <button onclick="showPage('quizzes')">
+                    Take Another Quiz
+                </button>
+
+                <button class="outline-btn"
+                        onclick="showPage('home')">
+                    Back Home
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- Login Page -->
+        <section id="login" class="page">
+
+            <div class="auth-box">
+                <p class="small-heading">WELCOME BACK</p>
+                <h2>Login</h2>
+
+                <form id="loginForm">
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter email"
+                        required
+                    >
+
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter password"
+                        required
+                    >
+
+                    <button type="submit">Login</button>
+                </form>
+
+                <p id="loginMessage"></p>
+
+                <p class="auth-switch">
+                    Don't have an account?
+                    <a href="#" onclick="showPage('register')">
+                        Register
+                    </a>
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Register Page -->
+        <section id="register" class="page">
+
+            <div class="auth-box">
+                <p class="small-heading">JOIN THE COMMUNITY</p>
+                <h2>Create Account</h2>
+
+                <form id="registerForm">
+
+                    <label>Full Name</label>
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Enter email"
+                        required
+                    >
+
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                    <button type="submit">Register</button>
+                </form>
+
+                <p id="registerMessage"></p>
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a href="#" onclick="showPage('login')">
+                        Login
+                    </a>
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026  Online Quiz Maker.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
