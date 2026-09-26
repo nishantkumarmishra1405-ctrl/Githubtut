@@ -1,0 +1,459 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Header */
+
+header {
+    height: 75px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #222;
+}
+
+header h2 {
+    font-size: 22px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+header button {
+    padding: 9px 16px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #555;
+    cursor: pointer;
+}
+
+header .register {
+    background: #fff;
+    color: #000;
+    margin-left: 5px;
+}
+
+
+/* Home */
+
+.home {
+    min-height: 620px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.main-content {
+    width: 650px;
+    z-index: 2;
+}
+
+.project {
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+    color: #ccc;
+}
+
+h1 {
+    font-size: 65px;
+    line-height: .95;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+}
+
+.description {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.start {
+    margin-top: 30px;
+    padding: 13px 25px;
+    background: #fff;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Circular designs */
+
+.design {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border: 1px solid #777;
+    border-radius: 50%;
+}
+
+.design span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #444;
+    border-radius: 50%;
+}
+
+.design span:nth-child(1) {
+    transform: rotate(25deg);
+}
+
+.design span:nth-child(2) {
+    transform: rotate(55deg);
+}
+
+.design span:nth-child(3) {
+    transform: rotate(90deg);
+}
+
+.design span:nth-child(4) {
+    transform: rotate(120deg);
+}
+
+.left-design {
+    left: -110px;
+    top: 50px;
+}
+
+.right-design {
+    right: -110px;
+    bottom: 20px;
+}
+
+
+/* About */
+
+.about {
+    padding: 100px 8%;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.small-title {
+    color: #777;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.about h2,
+.students h2 {
+    font-size: 48px;
+    margin-bottom: 25px;
+}
+
+.about h2 span,
+.students h2 span {
+    color: #777;
+}
+
+.about > p:not(.small-title) {
+    max-width: 650px;
+    margin: auto;
+    color: #999;
+    line-height: 1.7;
+}
+
+.boxes {
+    display: flex;
+    max-width: 950px;
+    margin: 60px auto 0;
+    gap: 20px;
+}
+
+.boxes div {
+    flex: 1;
+    border: 1px solid #292929;
+    padding: 30px;
+    text-align: left;
+}
+
+.boxes h3 {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.boxes h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.boxes p {
+    color: #888;
+    line-height: 1.5;
+}
+
+
+/* Students */
+
+.students {
+    padding: 100px 6%;
+    background: #080808;
+    text-align: center;
+}
+
+.student-area {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 25px;
+    text-align: left;
+}
+
+
+/* Form */
+
+.form,
+.list {
+    background: #050505;
+    border: 1px solid #292929;
+    padding: 25px;
+}
+
+.form h3,
+.list h3 {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    color: #999;
+    font-size: 13px;
+    margin: 15px 0 7px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #444;
+    outline: none;
+}
+
+.form button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #fff;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Student table */
+
+.list-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-top input {
+    width: 180px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: #777;
+    font-size: 12px;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 13px 8px;
+    border-bottom: 1px solid #222;
+}
+
+td {
+    font-size: 13px;
+}
+
+.edit,
+.delete {
+    border: none;
+    padding: 6px 9px;
+    cursor: pointer;
+}
+
+.edit {
+    background: #fff;
+    color: #000;
+}
+
+.delete {
+    background: #333;
+    color: #fff;
+}
+
+
+/* Login and register popup */
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .85);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.popup-content {
+    width: 370px;
+    background: #0b0b0b;
+    border: 1px solid #444;
+    padding: 35px;
+    position: relative;
+}
+
+.popup-content h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.popup-content button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup-content p {
+    margin-top: 20px;
+    color: #777;
+    text-align: center;
+    font-size: 13px;
+}
+
+.popup-content a {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: none;
+    background: none;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* Footer */
+
+footer {
+    padding: 30px 6%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #222;
+    color: #777;
+}
+
+footer h3 {
+    color: #fff;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    nav {
+        display: none;
+    }
+
+    .home {
+        padding: 50px 20px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .design {
+        opacity: .4;
+    }
+
+    .about h2,
+    .students h2 {
+        font-size: 35px;
+    }
+
+    .boxes {
+        flex-direction: column;
+    }
+
+    .student-area {
+        grid-template-columns: 1fr;
+    }
+
+    .list {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 650px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
